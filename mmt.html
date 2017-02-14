@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+					<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+body {font-family: Open Sans;}
+
+.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #36d1de;
+}
+
+/* Float the list items side by side */
+.tab li {float: left;}
+
+/* Style the links inside the list items */
+.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+/*.tab li a:focus, .active {
+    background-color: #ccc;
+}*/
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.tab-content-icon{
+	list-style-type: none;
+	display: inline-flex;
+}
+.tab-content-icon li{
+	padding: 10px;
+}
+.active {
+    color:black !important;
+    background: white !important;
+    border-bottom: 2px solid #36d1de;
+}
+.main-nav-bar{
+	position: relative;	
+}
+.inner-nav ul{
+	display: inline-flex;
+	list-style-type: none;
+}
+.inner-nav li{
+	padding: 10px;
+}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #6b6464;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:680px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:680px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+</style>
+<body>
+	<div class="main-nav-bar">
+		<div class="inner-nav">
+			<ul class="topnav" id="myTopnav" style="float: left;">
+				  <li><a href="/home/">Home</a></li>
+				  <li><a href="/about me/">About Me</a></li>
+				  <li><a href="/services/">Services</a></li>
+				  <li><a href="/contact us/">Contact Us</a></li>
+				   <li class="icon"><a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a></li>
+			</ul>	
+		</div>
+		<div class="inner-nav">
+			<ul>
+				  <li><span class="glyphicon glyphicon-search"></span></li>
+				  <li><span class="glyphicon glyphicon-heart"></span></li>
+				  <li><span class="glyphicon glyphicon-option-vertical"></span></li>
+			</ul>
+		</div>
+	</div>
+<div id="cssmenu">
+
+<ul class="tab ">
+  <li id="demo1" ><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'workshop')">WORKSHOPS</a></li>
+  <li id="demo2"><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'contests')">CONTESTS</a></li>
+  <li id="demo3" ><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'cartoonists')">CARTOONISTS</a></li>
+</ul>
+
+</div>
+<div id="workshop" class="tabcontent">
+  	<img src="Jellyfish.jpg" style="max-width: 100%";>
+  	<div>
+  		<ul class="tab-content-icon pull-right ">
+  			<li><span class="glyphicon glyphicon-heart"></span></li>
+  			<li><span class="glyphicon glyphicon-bookmark"></span></li>
+  			<li><span class="glyphicon glyphicon-share-alt"></span></li>
+  		</ul>
+  	</div>
+
+  		<img src="Jellyfish.jpg" style="max-width: 100%" ;>
+  	<div >
+  		<ul class="tab-content-icon pull-right ">
+  			<li><span class="glyphicon glyphicon-heart"></span></li>
+  			<li><span class="glyphicon glyphicon-bookmark"></span></li>
+  			<li><span class="glyphicon glyphicon-share-alt"></span></li>
+  		</ul>
+  	</div>
+
+</div>
+
+<div id="contests" class="tabcontent">
+  Dummy Layout
+</div>
+
+<div id="cartoonists" class="tabcontent">
+  Hello 
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+$(document).on("click", "#cssmenu li a", function (e) {
+    e.preventDefault();
+    $('#cssmenu li a').removeClass("active");
+    $(this).addClass('active');
+});
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+     
+</body>
+</html> 
